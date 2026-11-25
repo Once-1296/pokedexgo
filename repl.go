@@ -348,6 +348,9 @@ func commandCatch(config *config, args ...string) error{
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
 		return err
+	} else if data.Name == "" {
+		fmt.Printf("Pokemon not Found.\n")
+		return fmt.Errorf("Pokemon not Found.\n")
 	}
 	fmt.Printf("Throwing a Pokeball at %s...\n", data.Name)
 	num := 36 + rand.Intn(750 - 36 + 1)
@@ -370,6 +373,9 @@ func commandInspect(config *config, args ...string) error {
 	if !ok {
 		fmt.Printf("you have not caught that pokemon\n")
 		return fmt.Errorf("you have not caught that pokemon\n")
+	} else if(v.Name == ""){
+		fmt.Printf("Pokemon not Found.\n")
+		return fmt.Errorf("Pokemon not Found.\n")
 	}
 	fmt.Printf("Name: %s\n",v.Name)
 	fmt.Printf("Height: %d\n",v.Height)

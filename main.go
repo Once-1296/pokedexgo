@@ -53,7 +53,7 @@ func main() {
 		commandRegistry: cliMap,
 		NextLocationURL: "https://pokeapi.co/api/v2/location-area/",
 		PreviousLocationURL: "",
-		cache: pokecache.NewCache(5*time.Second),
+		cache: pokecache.NewCache(60*time.Second),
 		caughtPokemon: map[string]pokemon_details{},
 	}
 	REPL(config)
